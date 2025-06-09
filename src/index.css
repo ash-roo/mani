@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --electric-blue: #0ea5e9;
+  --deep-navy: #0f172a;
+  --neon-cyan: #06b6d4;
+  --warm-gray: #f8fafc;
+}
+
+/* Base Styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Circuit Board Background Pattern */
+.circuit-pattern {
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(14, 165, 233, 0.15) 2px, transparent 2px),
+    radial-gradient(circle at 75px 75px, rgba(6, 182, 212, 0.1) 2px, transparent 2px);
+  background-size: 100px 100px;
+}
+
+/* Electric Glow Animation */
+@keyframes electric-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.6), 0 0 40px rgba(6, 182, 212, 0.3);
+  }
+}
+
+.electric-glow {
+  animation: electric-glow 2s ease-in-out infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ea5e9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+.animate-delay-600 { animation-delay: 0.6s; }
+
+/* Hide elements initially for animation */
+.animate-fade-in-up {
+  opacity: 0;
+}
+
+.animate-visible {
+  opacity: 1;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Fix timeline positioning on mobile */
+  .timeline-mobile-fix {
+    padding-left: 3rem;
+  }
+  
+  .timeline-mobile-fix::before {
+    left: 1rem;
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .mobile-spacing {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Better text sizing on mobile */
+  .mobile-text-adjust h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .mobile-text-adjust h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  .mobile-text-adjust p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Improved mobile navigation */
+@media (max-width: 767px) {
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+}
+
+/* Better mobile card layouts */
+@media (max-width: 640px) {
+  .mobile-card-fix {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem;
+  }
+  
+  .mobile-grid-fix {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
